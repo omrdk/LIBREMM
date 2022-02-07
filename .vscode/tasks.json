@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake",   // calistirilacak komut
+            "type": "shell",
+            "command": "cmake",
+            "options": {        // cmake kodunun nerede calisirilacagi
+                "cwd": "${workspaceFolder}/build"
+            },
+            "args": [           // cmake e verilen arguman (. ve ya ..)
+                "${workspaceFolder}",
+            ],
+            "group": {           
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [      // baska taska bagla
+                "createbuildFolder"      
+            ]
+        },
+        {
+            "label": "createbuildFolder",  // build dosyasi olusturur
+            "type": "shell",
+            "command": "mkdir",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "args": [
+                "-p",   // mkdir ayni dizin altina var olan dosyayi olusturamaz ama p arg verirsen bunu hata olarak dondurmez
+                "build" // olusturulucak klasor ismi
+            ]
+        },
+        {
+            "label": "Make",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "args": [
+                "-l"  // kac core varsa ona gore paralelliyor
+            ]
+        }
+
+    ]
+    
+}

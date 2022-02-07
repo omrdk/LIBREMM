@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>mainpage.qml</file>
+        <file>contents/MMPlayer.qml</file>
+        <file>contents/MediaDropArea.qml</file>
+        <file>contents/Shortcuts.qml</file>
+        <file>contents/TopTools.qml</file>
+        <file>contents/BottomTools.qml</file>
+        <file>contents/SubSettings.qml</file>
+        <file>contents/VolumePanel.qml</file>
+        <file>contents/Playlist.qml</file>
+    </qresource>
+</RCC>
